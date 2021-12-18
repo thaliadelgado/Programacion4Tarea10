@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+  %}
+<h1 align="center">Editar palabra</h1>
+<form method="POST" action="/agregarPalabra">
+ 
+  <label>Palabra:</label>
+  <input name="palabra" id="palabra" type="text" class="form-control" value="{{model.palabra}}" />
+  <label>Significado:</label>
+  <textarea name="significado" id="significado" class="form-control">{{model.significado}}</textarea>
+  <br />
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Editar</button>
+  </div>
+</form>
+{% endblock %}

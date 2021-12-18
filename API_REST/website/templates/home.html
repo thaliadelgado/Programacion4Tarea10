@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+
+<h1 align="center">Lista de palabras </h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Palabra</th>
+      <th scope="col">Acciones</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for dict_item in palabras %}
+    <tr>
+        
+        <th scope="row">{{dict_item['palabra'] }}</th>
+        <td> 
+          <a class=" btn btn-primary" href="/ver-palabra?id={{ dict_item['id'] }}">Ver palabra</a>    
+          <a class=" btn btn-success" href="/editar?id={{ dict_item['id'] }}">Editar palabra</a> 
+        
+        <button type="button" class=" btn btn-danger"  href="/delete-palabra/{{ dict_item['id'] }}" >
+          Eliminar
+        </button>
+      </td>
+  </tr>   
+  {% endfor %}
+      
+     
+   
+  </tbody>
+</table>
+
+{% endblock %}
